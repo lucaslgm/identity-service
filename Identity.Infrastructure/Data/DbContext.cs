@@ -1,9 +1,11 @@
 using Identity.Domain.Entities;
+using Identity.Domain.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 namespace Identity.Infrastructure.Data
 {
-    public class IdentityDbContext(DbContextOptions<DbContext> options) : DbContext(options)
+    // (DbContextOptions<DbContext> options) : DbContext(options)
+    public class IdentityDbContext(DbContextOptions<DbContext> options) : DbContext(options), IUnitOfWork
     {
         public DbSet<User> Users { get; set; }
 
