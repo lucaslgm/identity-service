@@ -1,7 +1,9 @@
-using Identity.Api.Features.Users.RegisterUser;
+using FluentValidation;
+using Identity.Api.Shared;
 using Identity.Domain.Interfaces;
 using Identity.Infrastructure.Data;
 using Identity.Infrastructure.Repositories;
+using MediatR;
 
 namespace Identity.Api.Extensions
 {
@@ -12,6 +14,9 @@ namespace Identity.Api.Extensions
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationPipelineBehavior<,>));
+            services.AddValidatorsFromAssembly(typeof(Program).Assembly);
 
             return services;
         }
