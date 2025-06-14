@@ -7,8 +7,7 @@ The solution separates API, domain, and infrastructure concerns for better maint
 ---
 
 ## Project Structure
-
-.
+ <pre>
 ├── Identity.Api/                # API entry point and configuration
 │   ├── Extensions/
 │   ├── Properties/
@@ -26,6 +25,7 @@ The solution separates API, domain, and infrastructure concerns for better maint
 │   └── Identity.Infrastructure.csproj
 ├── Identity.sln                 # Solution file
 └── .gitignore
+ </pre>
 
 ---
 
