@@ -8,7 +8,24 @@ The solution separates API, domain, and infrastructure concerns for better maint
 
 ## Project Structure
 
-. ├── Identity.Api/ # API entry point and configuration │ ├── Extensions/ │ ├── Properties/ │ ├── Program.cs │ ├── appsettings.json │ ├── appsettings.Development.json │ └── Identity.Api.csproj ├── Identity.Domain/ # Domain entities and core logic │ ├── Entities/ │ ├── Interfaces/ │ └── Identity.Domain.csproj ├── Identity.Infrastructure/ # Data access and persistence │ ├── Data/ │ ├── Migrations/ │ └── Identity.Infrastructure.csproj ├── Identity.sln # Solution file └── .gitignore
+.
+├── Identity.Api/                # API entry point and configuration
+│   ├── Extensions/
+│   ├── Properties/
+│   ├── Program.cs
+│   ├── appsettings.json
+│   ├── appsettings.Development.json
+│   └── Identity.Api.csproj
+├── Identity.Domain/             # Domain entities and core logic
+│   ├── Entities/
+│   ├── Interfaces/
+│   └── Identity.Domain.csproj
+├── Identity.Infrastructure/     # Data access and persistence
+│   ├── Data/
+│   ├── Migrations/
+│   └── Identity.Infrastructure.csproj
+├── Identity.sln                 # Solution file
+└── .gitignore
 
 ---
 
