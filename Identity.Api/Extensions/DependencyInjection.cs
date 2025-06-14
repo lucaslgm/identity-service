@@ -3,6 +3,7 @@ using Identity.Api.Shared;
 using Identity.Domain.Interfaces;
 using Identity.Infrastructure.Data;
 using Identity.Infrastructure.Repositories;
+using Identity.Infrastructure.Services;
 using MediatR;
 
 namespace Identity.Api.Extensions
@@ -26,6 +27,7 @@ namespace Identity.Api.Extensions
             var connectionString = configuration.GetConnectionString("DefaultConnection");
             services.AddSqlServer<IdentityDbContext>(connectionString);
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IPasswordHasher, PasswordHasher>();
             services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<IdentityDbContext>());
 
             return services;
