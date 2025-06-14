@@ -1,4 +1,5 @@
 using FluentValidation;
+using Identity.Api.Features.Users.RegisterUser;
 using Identity.Api.Shared;
 using Identity.Domain.Interfaces;
 using Identity.Infrastructure.Data;
@@ -35,7 +36,8 @@ namespace Identity.Api.Extensions
 
         public static void MapApiEndpoints(this WebApplication app)
         {
-            // app.MapControllers();            
+            // app.MapControllers();         
+            app.MapRegisterUserEndpoint();
             // Add other endpoint mappings as needed
         }
     }
